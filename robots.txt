@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dexlot.app/sitemap.xml.gz
