@@ -24,11 +24,11 @@
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/resources/css/retype.css?v=1.11.1.694345576577" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.1.694630844527" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.1.694345576577" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.1.694630844527" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.1" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.1.694345576577" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.1.694630844527" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -286,8 +286,8 @@
 <p>DexLot presales do not allow users to claim tokens until the presale has been finalized (aka after liquidiy has been added). It is up to you to ensure that nobody else has tokens before this time.</p>
 <p>If you require users to have tokens before you finalize, another solution is to implement special logic that prevents users from trading your token until you are ready. If you do this, ensure the presale address is whitelisted.</p>
 <p>If your token takes fees on transfer, you also need a mechanism to whitelist specific addresses from these fees/taxes.</p>
-<p>The easiest way to do this is to make your contract extend our <a href="https://github.com/DexLot/DexLot/blob/main/PresaleReady.sol">PresaleReady contract</a>. An example of this can be seen <a href="https://github.com/DexLot/DexLot/blob/main/PresaleReadyExample.sol">here</a>.</p>
-<p>As a token developer, you should understand the importance of thoroughly testing your contract before deploying on the mainnet. DexLot supports testnets on every network, and it is highly recommended that you use them.</p>
+<p>The easiest way to do this is to make your contract extend our <a href="https://github.com/DexLot/contracts/blob/main/PresaleReady.sol">PresaleReadyOwnableERC20 contract</a> instead of extending ERC20 and Ownable. An example of this can be seen <a href="https://github.com/DexLot/contracts/blob/main/PresaleReadyToken.sol">here</a>.</p>
+<p>As a token developer, you should understand the importance of thoroughly testing your contract before deploying on the mainnet. DexLot supports testnets on every network, and it is highly recommended that you use them. We have a <a href="https://test-swap.dexlot.app/">Test Swap</a> set up which supports testnets for every network we support.</p>
 <p>When testing, ensure that your token:</p>
 <ul>
 <li>Takes no fees when depositing tokens into the presale contract</li>
