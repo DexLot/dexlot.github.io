@@ -24,11 +24,11 @@
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/resources/css/retype.css?v=1.11.1.694630844527" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.1.694777339129" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.1.694630844527" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.1.694777339129" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.1" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.1.694630844527" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.1.694777339129" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -216,10 +216,10 @@
 <doc-anchor-target id="why-should-i-use-dexlot-instead-of-pinksale-or-dxsale">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#why-should-i-use-dexlot-instead-of-pinksale-or-dxsale">#</doc-anchor-trigger>
-        <span>Why should I use DexLot instead of Pinksale, or DXSale?</span>
+        <span>Why should I use DexLot instead of PinkSale or DXSale?</span>
     </h2>
 </doc-anchor-target>
-<p>We have innovated new ways to improve gas usage beyond what was accomplished before us. We are currently beating DXSale by over 20x, and PinkSale by almost 3x all around the board in terms of transaction costs. Using DexLot will save both the creator and the contributors a significant amount of money on transaction fees.</p>
+<p>We have drastically reduced gas fees in comparison to other launchpads. We are currently beating DXSale by over 20x, and PinkSale by almost 3x all around the board in terms of transaction costs. Using DexLot will save both the creator and the contributors a significant amount of money on transaction fees.</p>
 <p>We also believe that our User Interface (UI) is just as easy to use, and loads much faster than DXSale or PinkSale due to our use of Server-Side Rendering (SSR).</p>
 <doc-anchor-target id="does-dexlot-have-its-own-token">
     <h2>
@@ -227,21 +227,35 @@
         <span>Does DexLot have its own token?</span>
     </h2>
 </doc-anchor-target>
-<p>We current do not have our own token, and have no plans to make one. As of now, all services are free for anyone to use, and do not require that you hold any token.</p>
-<doc-anchor-target id="where-can-i-view-code-for-the-presale-contract">
+<p>We currently do not have our own token and have no plans to make one. As of now, all services are free for anyone to use and do not require that you hold any token.</p>
+<doc-anchor-target id="where-can-i-view-the-code-for-the-presale-contract">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#where-can-i-view-code-for-the-presale-contract">#</doc-anchor-trigger>
-        <span>Where can I view code for the Presale contract?</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#where-can-i-view-the-code-for-the-presale-contract">#</doc-anchor-trigger>
+        <span>Where can I view the code for the Presale contract?</span>
     </h2>
 </doc-anchor-target>
 <p>Please note that neither DXSale nor PinkSale have verified their contracts or released the code for them. Due to our innovative gas optimizations, we have decided that it&#x27;s in DexLot&#x27;s best interest to also not verify our contracts or release the code for our contracts. We hope that over time we can build trust with people and show that we have no bad intentions behind this - It&#x27;s purely for our success as a company.</p>
+<doc-anchor-target id="im-a-token-creator-do-i-need-to-manually-create-the-pair-between-eth-and-my-token">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#im-a-token-creator-do-i-need-to-manually-create-the-pair-between-eth-and-my-token">#</doc-anchor-trigger>
+        <span>I&#x27;m a token creator. Do I need to manually create the pair between ETH and my token?</span>
+    </h2>
+</doc-anchor-target>
+<p>No, you don&#x27;t need to. The presale contract will automatically create the pair if it does not already exist and will add liquidity to it once the presale has been finalized.</p>
+<doc-anchor-target id="can-i-create-the-pair-between-eth-and-my-token-before-making-a-presale">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#can-i-create-the-pair-between-eth-and-my-token-before-making-a-presale">#</doc-anchor-trigger>
+        <span>Can I create the pair between ETH and my token before making a presale?</span>
+    </h2>
+</doc-anchor-target>
+<p>Certain tokens need to know the pair address during the constructor. If you have such a requirement, you can create the pair at any time between deploying your token and finalizing the presale. Just make sure that you don&#x27;t add liquidity! Adding liquidity before you finalize will ruin your presale.</p>
 <doc-anchor-target id="how-can-i-trust-dexlot">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-can-i-trust-dexlot">#</doc-anchor-trigger>
         <span>How can I trust DexLot?</span>
     </h2>
 </doc-anchor-target>
-<p>Lots of work has been put into the website and smart contracts. Achieving our low transaction costs required a lot of time and effort, and it is in our best interest to grow DexLot and keep it fully functional. We hope to one day scale DexLot into a large company, becoming far more than just a launchpad / toolkit. Doing this requires trust and community backing &amp; we hope that eventually the name DexLot will have just as much trust as the name Uniswap or Metamask.</p>
+<p>Lots of work has been put into the website and smart contracts. Achieving our low transaction costs required a lot of time and effort, and it is in our best interest to grow DexLot and keep it fully functional. We hope to one day scale DexLot into a large company, becoming far more than just a launchpad/toolkit. Doing this requires trust and community backing &amp; we hope that eventually, the name DexLot will have just as much trust as the name Uniswap or Metamask.</p>
 <doc-anchor-target id="dont-see-your-question-here">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#dont-see-your-question-here">#</doc-anchor-trigger>

@@ -24,11 +24,11 @@
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/resources/css/retype.css?v=1.11.1.694630844527" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.1.694777339129" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.1.694630844527" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.1.694777339129" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.1" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.1.694630844527" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.1.694777339129" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -221,7 +221,7 @@
         </div>
     </div>
 </div>
-<p>The DexLot launchpad is where token creators can go to list their token on DexLot. Anyone is able to do this - we do not require KYC or other forms of identity verification to use our services. This may be subject to change in future updates of DexLot. Please refer to your local laws/regulations to ensure you are elegibile to use our services. You are responsible for checking this.</p>
+<p>The DexLot launchpad is where token creators can go to list their token(s) on DexLot. Anyone is able to do this - we do not require KYC or other forms of identity verification to use our services. This may be subject to change in future updates of DexLot. Please refer to your local laws/regulations to ensure you are eligible to use our services. You are responsible for checking this.</p>
 <hr />
 <doc-anchor-target id="terminology">
     <h2>
@@ -255,16 +255,16 @@
 <li>Once the timer ends, you will be able to remove an arbitrary percent of the liquidity on your <strong>presale management</strong> page.</li>
 </ul>
 </li>
-<li>The <strong>exchange rate</strong> determines the initial listing price of your token on the networks exchange (uniswap, pancakeswap, traderjoe, etc.).
+<li>The <strong>exchange rate</strong> determines the initial listing price of your token on the network&#x27;s exchange (Uniswap, PancakeSwap, TraderJoe, etc.).
 <ul>
 <li>Example: If Bob is the first person to trade your token, and he trades 1 <em>native token</em>* for some amount of your tokens, he will receive <strong>exchange rate</strong> amount of tokens.</li>
-<li>Keep in mind, standard price action will occur. After people buy/sell, the value of the token will change. The previous example only applies for the first person to trade the token.</li>
+<li>Keep in mind, standard price action will occur. After people buy/sell, the value of the token will change. The previous example only applies to the first person to trade the token, and will only hold true if the token takes no fees. If a token takes a 2% fee on transfer, they will get 2% less tokens than the exchange rate.</li>
 <li>Please read the <a href="/math/">math section</a> to understand the math behind this.</li>
 </ul>
 </li>
 <li>The <strong>presale rate</strong> determines how many tokens a user will receive per 1 <em>native token</em>* contributed during the presale.
 <ul>
-<li>The <strong>presale rate</strong> is a static amount of tokens. Unlike standard trading on an exchange, this number will not rise or fall throughout the presale.</li>
+<li>The <strong>presale rate</strong> is a static amount of tokens. Unlike standard trading on an exchange, this number will not rise or fall throughout the presale, and should not be subject to transfer fees.</li>
 <li>This means that buying into a presale will often give people a better price than buying on an exchange.</li>
 </ul>
 </li>
@@ -283,7 +283,7 @@
 <p><strong>Before you list a token on DexLot, ensure that you have NOT already added liquidity.</strong></p>
 <p>When you finalize a presale, DexLot will automatically add liquidity such that one native token (BNB, ETH, MATIC) will be equal to <code v-pre>Exchange Rate</code> amount of your tokens.</p>
 <p>If someone else adds liquidity before you are able to finalize the presale, all of your followers/community will become able to trade the token and you will have NO OWNERSHIP over the liquidity pool. <strong>This means the person who sniped liquidity will be able to rug pull all of your followers.</strong></p>
-<p>DexLot presales do not allow users to claim tokens until the presale has been finalized (aka after liquidiy has been added). It is up to you to ensure that nobody else has tokens before this time.</p>
+<p>DexLot presales do not allow users to claim tokens until the presale has been finalized (aka after liquidity has been added). It is up to you to ensure that nobody else has tokens before this time.</p>
 <p>If you require users to have tokens before you finalize, another solution is to implement special logic that prevents users from trading your token until you are ready. If you do this, ensure the presale address is whitelisted.</p>
 <p>If your token takes fees on transfer, you also need a mechanism to whitelist specific addresses from these fees/taxes.</p>
 <p>The easiest way to do this is to make your contract extend our <a href="https://github.com/DexLot/contracts/blob/main/PresaleReady.sol">PresaleReadyOwnableERC20 contract</a> instead of extending ERC20 and Ownable. An example of this can be seen <a href="https://github.com/DexLot/contracts/blob/main/PresaleReadyToken.sol">here</a>.</p>
@@ -291,12 +291,15 @@
 <p>When testing, ensure that your token:</p>
 <ul>
 <li>Takes no fees when depositing tokens into the presale contract</li>
+<li>That ONLY the presale contract can trade tokens or add liquidity until you are ready</li>
 <li>Can be finalized without reverting</li>
 <li>Has the correct exchange listing price after it has been finalized</li>
-<li>That ONLY the presale contract can trade tokens or add liquidity until you are ready</li>
-<li>After you have finalized the presale, you can successfully unlock trading and allow anyone to buy or sell your token</li>
-<li>Any other special functionality you have added works as intended.</li>
+<li>Trading can be unlocked after you finalize, and that after doing so anyone can buy or sell your token</li>
+<li>That liquidity can be removed, and that you receive the correct amount of tokens</li>
+<li>Any other special functionality you have added works as intended</li>
 </ul>
+<p>The Presale contracts deployed to testnets don&#x27;t check the liquidity unlock timer. Please keep this in mind when testing.</p>
+<p>At some point in the future, we hope to release an open-source testing script to assist with this. We understand that testing can be cumbersome but it&#x27;s vital that your token works properly!</p>
 <p>Once your contract has been <em><strong>thoroughly tested</strong></em>, you can launch it on the mainnet and follow the same procedures you tested with. We wish you the best of luck!</p>
 <hr />
 

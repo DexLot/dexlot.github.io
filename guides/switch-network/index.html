@@ -24,11 +24,11 @@
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/resources/css/retype.css?v=1.11.1.694630844527" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.1.694777339129" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.1.694630844527" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.1.694777339129" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.1" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.1.694630844527" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.1.694777339129" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -206,8 +206,92 @@
     </h1>
 </doc-anchor-target>
 <p>Contributing to or creating a presale using our site requires you to be on the correct network. If you intend to deploy or contribute to a presale on the Ethereum network, ensure that your wallet is connected to the Ethereum network.</p>
-<p>Before you can switch networks, your wallet must be connected to our website. Please read <a href="../connect/">Connecting your Wallet</a> to learn how to connect your wallet.</p>
+<p>If you use metamask, your wallet must be connected to our website before the network switcher on our website will work. Please read <a href="../connect/">Connecting your Wallet</a> to learn how to connect your wallet.</p>
 <p>Once your wallet is connected, hover or click on your profile in the top left of the webpage. Doing so will open a dropdown. Click the option named <code v-pre>Switch Network</code>, then choose which network you would like to switch to. This should open a prompt in your wallet requesting to add or switch networks - make sure you confirm this request or your network will not be switched. DexLot should automatically detect when your network or wallet address changes, and will update accordingly.</p>
+<p>If you use WalletConnect, you must add and switch networks from within your wallet - the network switcher on our website will not work. Here&#x27;s a list of information that you can use to manually add a network into your wallet. The Ethereum network has been excluded from this list as every major wallet already includes it.</p>
+<doc-tabs>
+<doc-tab id="binance">
+<template #title>Binance</template>
+<ul>
+<li>Network Name: Binance</li>
+<li>New RPC URL: <a href="https://bsc-dataseed.binance.org/">https://bsc-dataseed.binance.org/</a></li>
+<li>ChainID: 56</li>
+<li>Symbol: BNB</li>
+<li>Block Explorer URL: <a href="https://bscscan.com">https://bscscan.com</a></li>
+</ul>
+</doc-tab>
+<doc-tab id="polygon">
+<template #title>Polygon</template>
+<ul>
+<li>Network Name: Polygon</li>
+<li>RPC URL: <a href="https://polygon-rpc.com/">https://polygon-rpc.com/</a></li>
+<li>ChainID: 137</li>
+<li>Symbol: MATIC</li>
+<li>Block Explorer URL: <a href="https://polygonscan.com">https://polygonscan.com</a></li>
+</ul>
+</doc-tab>
+<doc-tab id="avalanche">
+<template #title>Avalanche</template>
+<ul>
+<li>Network Name: Avalanche</li>
+<li>RPC URL: <a href="https://api.avax.network/ext/bc/C/rpc">https://api.avax.network/ext/bc/C/rpc</a></li>
+<li>ChainID: 43114</li>
+<li>Symbol: AVAX</li>
+<li>Block Explorer URL: <a href="https://snowtrace.io">https://snowtrace.io</a></li>
+</ul>
+</doc-tab>
+<doc-tab id="fantom">
+<template #title>Fantom</template>
+<ul>
+<li>Network Name: Fantom</li>
+<li>RPC URL: <a href="https://rpcapi.fantom.network">https://rpcapi.fantom.network</a></li>
+<li>ChainID: 250</li>
+<li>Symbol: FTM</li>
+<li>Block Explorer URL: <a href="https://ftmscan.com">https://ftmscan.com</a></li>
+</ul>
+</doc-tab>
+</doc-tabs>
+<doc-tabs>
+<doc-tab id="binance-testnet">
+<template #title>Binance Testnet</template>
+<ul>
+<li>Network Name: Binance Testnet</li>
+<li>New RPC URL: <a href="https://data-seed-prebsc-1-s1.binance.org:8545/">https://data-seed-prebsc-1-s1.binance.org:8545/</a></li>
+<li>ChainID: 97</li>
+<li>Symbol: BNB</li>
+<li>Block Explorer URL: <a href="https://testnet.bscscan.com">https://testnet.bscscan.com</a></li>
+</ul>
+</doc-tab>
+<doc-tab id="mumbai-testnet">
+<template #title>Mumbai Testnet</template>
+<ul>
+<li>Network Name: Mumbai Testnet</li>
+<li>New RPC URL: <a href="https://rpc-mumbai.maticvigil.com/">https://rpc-mumbai.maticvigil.com/</a></li>
+<li>ChainID: 80001</li>
+<li>Symbol: MATIC</li>
+<li>Block Explorer URL: <a href="https://mumbai.polygonscan.com">https://mumbai.polygonscan.com</a></li>
+</ul>
+</doc-tab>
+<doc-tab id="avalanche-testnet">
+<template #title>Avalanche Testnet</template>
+<ul>
+<li>Network Name: Avalanche Testnet</li>
+<li>New RPC URL: <a href="https://api.avax-test.network/ext/bc/C/rpc">https://api.avax-test.network/ext/bc/C/rpc</a></li>
+<li>ChainID: 43113</li>
+<li>Symbol: AVAX</li>
+<li>Block Explorer URL: <a href="https://testnet.snowtrace.io">https://testnet.snowtrace.io</a></li>
+</ul>
+</doc-tab>
+<doc-tab id="fantom-testnet">
+<template #title>Fantom Testnet</template>
+<ul>
+<li>Network Name: Fantom Testnet</li>
+<li>New RPC URL: <a href="https://rpc.testnet.fantom.network/">https://rpc.testnet.fantom.network/</a></li>
+<li>ChainID: 4002</li>
+<li>Symbol: FTM</li>
+<li>Block Explorer URL: <a href="https://testnet.ftmscan.com">https://testnet.ftmscan.com</a></li>
+</ul>
+</doc-tab>
 
 
 <div class="flex items-center mt-6 mb-6">
