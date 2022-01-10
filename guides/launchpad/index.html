@@ -24,11 +24,11 @@
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/resources/css/retype.css?v=1.11.1.694777339129" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.1.695150261332" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.1.694777339129" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.1.695150261332" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.1" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.1.694777339129" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.1.695150261332" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -217,11 +217,11 @@
             </svg>
         </div>
         <div class="pr-5 ml-3">
-<p>Your token needs to support special functionality before you can create a presale on DexLot. Please be sure to read the <strong>requirements</strong> section before continuing on.</p>
+<p>Your token needs to support special functionality before you can create a presale on DexLot. Please be sure to read the <strong>requirements</strong> section before continuing.</p>
         </div>
     </div>
 </div>
-<p>The DexLot launchpad is where token creators can go to list their token(s) on DexLot. Anyone is able to do this - we do not require KYC or other forms of identity verification to use our services. This may be subject to change in future updates of DexLot. Please refer to your local laws/regulations to ensure you are eligible to use our services. You are responsible for checking this.</p>
+<p>The DexLot launchpad is where token creators can go to list their token(s) on DexLot. Anyone can do this as we do not require KYC or other forms of identity verification to use our services. This may be subject to change in future updates of DexLot. Please refer to your local laws/regulations to ensure you are eligible to use our services. You are responsible for checking this.</p>
 <hr />
 <doc-anchor-target id="terminology">
     <h2>
@@ -258,13 +258,13 @@
 <li>The <strong>exchange rate</strong> determines the initial listing price of your token on the network&#x27;s exchange (Uniswap, PancakeSwap, TraderJoe, etc.).
 <ul>
 <li>Example: If Bob is the first person to trade your token, and he trades 1 <em>native token</em>* for some amount of your tokens, he will receive <strong>exchange rate</strong> amount of tokens.</li>
-<li>Keep in mind, standard price action will occur. After people buy/sell, the value of the token will change. The previous example only applies to the first person to trade the token, and will only hold true if the token takes no fees. If a token takes a 2% fee on transfer, they will get 2% less tokens than the exchange rate.</li>
+<li>Keep in mind, standard price action will occur. After people buy/sell, the value of the token will change. The previous example only applies to the first person to trade the token, and will only happen if the token takes no fees. If a token takes a 2% fee on transfer, they will get 2% fewer tokens than the exchange rate.</li>
 <li>Please read the <a href="/math/">math section</a> to understand the math behind this.</li>
 </ul>
 </li>
 <li>The <strong>presale rate</strong> determines how many tokens a user will receive per 1 <em>native token</em>* contributed during the presale.
 <ul>
-<li>The <strong>presale rate</strong> is a static amount of tokens. Unlike standard trading on an exchange, this number will not rise or fall throughout the presale, and should not be subject to transfer fees.</li>
+<li>The <strong>presale rate</strong> is a static amount of tokens. Unlike standard trading on an exchange, this number will not rise or fall throughout the presale, and will not be subject to transfer fees.</li>
 <li>This means that buying into a presale will often give people a better price than buying on an exchange.</li>
 </ul>
 </li>
@@ -274,6 +274,15 @@
 <p>If no action is taken by the presale creator for over 2 days after it has been marked as successful, the community will be able to cancel the presale and claim a full refund. Be sure to finalize the presale before this time.</p>
 <p>*native token, meaning the <em>gas token</em> for the blockchain you are launching on. For the Ethereum network, this would be Ethereum (ETH). On the Binance chain, the <em>native token</em> would be BNB.</p>
 <hr />
+<doc-anchor-target id="presale-information">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#presale-information">#</doc-anchor-trigger>
+        <span>Presale Information</span>
+    </h2>
+</doc-anchor-target>
+<p>You can include certain information about your token, such as a description, logo, and links to social media accounts. Information about your presale can be updated at any time between the creation time and the presales start time. Once the start time passes, this information can not be changed. Your presale is restricted from starting less than 30 minutes after creation, so please use this time to verify that everything is accurate and all links are functional.</p>
+<p>Updating the presale information requires you to sign a message with your wallet. Please confirm this request with MetaMask after you verify that the information is accurate and that you are updating the correct presale. Signing this message will not cost any gas and will not be able to move any funds out of your account - it is just used to prove that you own the wallet which created the presale.</p>
+<hr />
 <doc-anchor-target id="requirements">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#requirements">#</doc-anchor-trigger>
@@ -282,11 +291,11 @@
 </doc-anchor-target>
 <p><strong>Before you list a token on DexLot, ensure that you have NOT already added liquidity.</strong></p>
 <p>When you finalize a presale, DexLot will automatically add liquidity such that one native token (BNB, ETH, MATIC) will be equal to <code v-pre>Exchange Rate</code> amount of your tokens.</p>
-<p>If someone else adds liquidity before you are able to finalize the presale, all of your followers/community will become able to trade the token and you will have NO OWNERSHIP over the liquidity pool. <strong>This means the person who sniped liquidity will be able to rug pull all of your followers.</strong></p>
+<p>If someone else adds liquidity before you can finalize the presale, all of your followers/community will become able to trade the token and you will have NO OWNERSHIP over the liquidity pool. <strong>This means the person who sniped liquidity will be able to rug pull all of your followers.</strong></p>
 <p>DexLot presales do not allow users to claim tokens until the presale has been finalized (aka after liquidity has been added). It is up to you to ensure that nobody else has tokens before this time.</p>
 <p>If you require users to have tokens before you finalize, another solution is to implement special logic that prevents users from trading your token until you are ready. If you do this, ensure the presale address is whitelisted.</p>
 <p>If your token takes fees on transfer, you also need a mechanism to whitelist specific addresses from these fees/taxes.</p>
-<p>The easiest way to do this is to make your contract extend our <a href="https://github.com/DexLot/contracts/blob/main/PresaleReady.sol">PresaleReadyOwnableERC20 contract</a> instead of extending ERC20 and Ownable. An example of this can be seen <a href="https://github.com/DexLot/contracts/blob/main/PresaleReadyToken.sol">here</a>.</p>
+<p>The easiest way to do this is to make your contract extend our <a href="https://github.com/DexLot/contracts/blob/main/PresaleReady.sol">PresaleReady contract</a> instead of extending ERC20 and Ownable. An example of this can be seen <a href="https://github.com/DexLot/contracts/blob/main/PresaleReadyToken.sol">here</a>.</p>
 <p>As a token developer, you should understand the importance of thoroughly testing your contract before deploying on the mainnet. DexLot supports testnets on every network, and it is highly recommended that you use them. We have a <a href="https://test-swap.dexlot.app/">Test Swap</a> set up which supports testnets for every network we support.</p>
 <p>When testing, ensure that your token:</p>
 <ul>
@@ -299,7 +308,7 @@
 <li>Any other special functionality you have added works as intended</li>
 </ul>
 <p>The Presale contracts deployed to testnets don&#x27;t check the liquidity unlock timer. Please keep this in mind when testing.</p>
-<p>At some point in the future, we hope to release an open-source testing script to assist with this. We understand that testing can be cumbersome but it&#x27;s vital that your token works properly!</p>
+<p>Eventually, we hope to release an open-source testing script to assist with this. We understand that testing can be troubling but it&#x27;s important that your token functions properly!</p>
 <p>Once your contract has been <em><strong>thoroughly tested</strong></em>, you can launch it on the mainnet and follow the same procedures you tested with. We wish you the best of luck!</p>
 <hr />
 
@@ -333,10 +342,10 @@
     </div>
 
     <div class="w-1/2">
-        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/guides/contributing/">
+        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/guides/locker/">
             <span>
                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                <span class="block mt-1">Contributing</span>
+                <span class="block mt-1">Liquidity/Token Locker</span>
             </span>
             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
         </a>

@@ -24,11 +24,11 @@
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/resources/css/retype.css?v=1.11.1.694777339129" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.1.695150261332" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.1.694777339129" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.1.695150261332" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.1" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.1.694777339129" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.1.695150261332" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -205,38 +205,46 @@
         <span>Service Fees</span>
     </h1>
 </doc-anchor-target>
-<doc-tabs>
-<doc-tab id="eth">
-<template #title>ETH</template>
+<doc-panels>
+   <doc-panel id="ethereum">
+       <template #title>Ethereum</template>
 <ul>
 <li>Launchpad - 0.2 ETH + <a href="../guides/launchpad/#terminology">max contribution</a> + 2% of raised funds.</li>
 </ul>
-</doc-tab>
-<doc-tab id="bsc">
-<template #title>BSC</template>
+   </doc-panel>
+   <doc-panel id="binance-smart-chain" collapsed>
+       <template #title>Binance Smart Chain</template>
 <ul>
 <li>Launchpad - 1 BNB + <a href="../guides/launchpad/#terminology">max contribution</a> + 2% of raised funds.</li>
 </ul>
-</doc-tab>
-<doc-tab id="matic">
-<template #title>MATIC</template>
+   </doc-panel>
+   <doc-panel id="polygon" collapsed>
+       <template #title>Polygon</template>
 <ul>
 <li>Launchpad - 100 MATIC + <a href="../guides/launchpad/#terminology">max contribution</a> + 2% of raised funds.</li>
 </ul>
-</doc-tab>
-<doc-tab id="avax">
-<template #title>AVAX</template>
+   </doc-panel>
+   <doc-panel id="avalanche" collapsed>
+       <template #title>Avalanche</template>
 <ul>
 <li>Launchpad - 6 AVAX + <a href="../guides/launchpad/#terminology">max contribution</a> + 2% of raised funds.</li>
 </ul>
-</doc-tab>
-<doc-tab id="ftm">
-<template #title>FTM</template>
+   </doc-panel>
+   <doc-panel id="fantom" collapsed>
+       <template #title>Fantom</template>
 <ul>
 <li>Launchpad - 300 FTM + <a href="../guides/launchpad/#terminology">max contribution</a> + 2% of raised funds.</li>
 </ul>
+   </doc-panel>
+</doc-panels>
+<!-- |||
+| --- | --- |
+| Ethereum | - Launchpad: 0.2 ETH + [max contribution](guides/launchpad#terminology) + 2% of raised funds.<br>- Locker:
+| Binance Smart Chain | - Launchpad: 1 BNB + [max contribution](guides/launchpad#terminology) + 2% of raised funds.<br>- Locker:
+| Polygon | - Launchpad: 100 MATIC + [max contribution](guides/launchpad#terminology) + 2% of raised funds.<br>- Locker:
+| Avalanche | - Launchpad: 6 AVAX + [max contribution](guides/launchpad#terminology) + 2% of raised funds.<br>- Locker:
+| Fantom | - Launchpad: 300 FTM + [max contribution](guides/launchpad#terminology) + 2% of raised funds.<br>- Locker: -->
 <!-- For every presale, we take [max contribution](guides/launchpad#terminology) * [presale rate](guides/launchpad#terminology) tokens. This way, we *only* get the maxinum amount of tokens a contributor would be able to get. -->
-</doc-tab>
 
 
 

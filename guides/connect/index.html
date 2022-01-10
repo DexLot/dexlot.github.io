@@ -24,11 +24,11 @@
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/resources/css/retype.css?v=1.11.1.694777339129" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.1.695150261332" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.1.694777339129" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.1.695150261332" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.1" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.1.694777339129" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.1.695150261332" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -207,9 +207,9 @@
 </doc-anchor-target>
 <p>Connecting your wallet allows you to interact with the dApp. DexLot will not store your wallet addresses or track transactions that are unrelated to our website.</p>
 <p>We only officially support MetaMask and suggest that all users get set up with MetaMask before using our website. We will not go into any details on how to use MetaMask or other wallets and suggest that users do their own research. A good tutorial for getting started with MetaMask can be found <a href="https://dappgrid.com/metamask-tutorial/">here</a>.</p>
-<p>We also support WalletConnect for mobile users, but we cannot guarantee a seamless experience.</p>
-<p>To connect your wallet, find the <code v-pre>Connect Wallet</code> button in the top right of our website.</p>
-<p>Clicking this button will prompt you to select which wallet you use. Once you select it, further instructions will be provided. Selecting MetaMask will request which account you would like to connect the website to. WalletConnect will prompt you to scan a QR code with your phone. Once your wallet is connected, you can interact with the website.</p>
+<p>We also support WalletConnect for mobile wallet users, but we cannot guarantee a seamless experience.</p>
+<p>To connect your wallet, find the <code v-pre>Connect Wallet</code> button in the top right of our website. Further instructions will be provided there.</p>
+<p>If you do not connect your wallet, you can still browse the site. Any chain data required will be requested using a fallback RPC provider, but you will not be able to send transactions.</p>
 
 
 <div class="flex items-center mt-6 mb-6">

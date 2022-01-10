@@ -24,12 +24,12 @@
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/resources/css/retype.css?v=1.11.1.694777339129" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.1.695150261332" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.1.694777339129" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.1.695150261332" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.1" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.1.694777339129" defer></script>
-    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=1.11.1.694777339129" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.1.695150261332" defer></script>
+    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=1.11.1.695150261332" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -213,7 +213,7 @@
 <pre class="language-javascript"><code v-pre class="language-javascript">const liquidityNative = totalContributed * liquidityPercent * (100 - fee) / 10000;
 const liquidityTokens = exchangeRate * (liquidityNative * 1000 + 997) / 997;</code></pre>
 </doc-codeblock></div>
-<p>The amount of tokens required to create a presale can be calculated using the formula below:</p>
+<p>The number of tokens required to create a presale can be calculated using the formula below:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-javascript"><code v-pre class="language-javascript">const tokensRequired = liquidityTokens + hardcap * presaleRate + maxContrib * presaleRate;</code></pre>
 </doc-codeblock></div>
@@ -231,9 +231,9 @@ const feeFactor = maxContrib * (presalePercent / exchangePercent);
 const exchangeRate = tokensToUseForPresale / (liquidityFactor + presaleFactor + feeFactor);
 const presaleRate = exchangeRate * (presalePercent / exchangePercent);</code></pre>
 </doc-codeblock></div>
-<p>On our website, we deliberately subtract 1 from the calculated exchangeRate and presaleRate to ensure that the calculator never messes up due to floating-point precision errors.</p>
-<p>Please note that the formula to calculate liquidityNative and liquidityTokens is derived from Uniswap&#x27;s getAmountOut function. This function is used by Uniswap to determine how many assets to give for a certain amount of input. Different chains might have slightly different liquidity provider fees, so please take that into account when looking over the above formulas. The function being discussed is available <a href="https://github.com/Uniswap/v2-periphery/blob/master/contracts/libraries/UniswapV2Library.sol#L43">here</a></p>
-<p>Another thing to note - certain tokens might take fees on transfer. Such fees can make the initial listing price not exactly equal to the exchangeRate supplied. It is up to token creators to determine the logic of their smart contract, and cases such as this are out of our control.</p>
+<p>On our website, we subtract 1 from the calculated exchangeRate and presaleRate to ensure that the calculator never messes up due to floating-point precision errors.</p>
+<p>Please note that the formula to calculate liquidityNative and liquidityTokens is derived from Uniswap&#x27;s getAmountOut function. This function is used by Uniswap to determine how many assets to give for a certain amount of input. Different chains might have slightly different liquidity provider fees, so please take that into account when looking over the above formulas. The function being discussed is available <a href="https://github.com/Uniswap/v2-periphery/blob/master/contracts/libraries/UniswapV2Library.sol#L42">here</a>.</p>
+<p>Another thing to note - certain tokens might take fees on transfer. Such fees can make the initial listing price not exactly equate to the exchangeRate supplied. It is up to token creators to determine the logic of their smart contract. The functionality of tokens listed on our site are out of our control.</p>
 
 
 
